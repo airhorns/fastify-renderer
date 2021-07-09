@@ -5147,7 +5147,7 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-dom@*, react-dom@0.0.0-experimental-4ead6b530:
+react-dom@*, react-dom@0.0.0-experimental-4ead6b530, react-dom@17.0.2:
   version "0.0.0-experimental-4ead6b530"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-0.0.0-experimental-4ead6b530.tgz#6ca831f5aa7ab86f7299b9a2f7b81dffabfa4eb4"
   integrity sha512-a03ptS8lhhEENNgne6zQMXQWX/Z6WMEBGJQY0laOC0NgJywidePYpgkiE72fUAaj/r7t9a6XsdVyqx4UsEZijg==
