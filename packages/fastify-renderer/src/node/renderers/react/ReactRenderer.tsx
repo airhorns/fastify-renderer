@@ -72,8 +72,13 @@ export class ReactRenderer implements Renderer {
     }
   }
 
+  /** The purpose of adding this function is to allow us to spy on this method, otherwise it isn't available in the class prototype */
+  async render<Props>(render: Render<Props>): Promise<void> {
+    return this.wrappedRender(render)
+  }
+
   /** Renders a given request and sends the resulting HTML document out with the `reply`. */
-  render = wrap(
+  private wrappedRender = wrap(
     'fastify-renderer.render',
     async <Props,>(render: Render<Props>): Promise<void> => {
       const bus = this.startRenderBus(render)
@@ -157,7 +162,6 @@ export class ReactRenderer implements Renderer {
    * Given a concrete, resolvable node-land module id (path), return the server-land path to the script to render server side
    * Because we're using vite, we have special server side entrypoints too such that we can't just `require()` an entrypoint, even on the server, we need to a require a file that vite has built where all the copies of React are the same within.
    * In dev mode, will return a virtual module url that will use use the server side render plugin to produce a script around the entrypoint
-   * In production
    */
   public entrypointRequirePathForServer(route: RenderableRoute) {
     const entrypointName = this.buildVirtualServerEntrypointModuleID(route)
