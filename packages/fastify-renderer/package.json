@@ -65,7 +65,7 @@
     "path-to-regexp": "^6.2.0",
     "sanitize-filename": "^1.6.3",
     "stream-template": "^0.0.10",
-    "vite": "^2.2.2",
+    "vite": "^2.4.2",
     "wouter": "^2.7.3"
   },
   "peerDependencies": {
